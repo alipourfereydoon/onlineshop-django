@@ -1,0 +1,14 @@
+{% extends 'shop/base.html' %}
+{% block title %}
+  Home — My Shop
+{% endblock %}
+{% block content %}
+  <h1>Products</h1>
+  <div class="grid">
+    {% for product in products %}
+      {% include 'shop/product_card.html' with product=product %}
+    {% empty %}
+      <p>No products yet. Add them in admin.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

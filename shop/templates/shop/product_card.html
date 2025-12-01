@@ -1,0 +1,13 @@
+<div class="product-card" data-product-id="{{ product.id }}">
+  {% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+  {% else %}
+    <div class="product-image-placeholder">No image</div>
+  {% endif %}
+  <h3>{{ product.name }}</h3>
+  <p class="price">${{ product.price }}</p>
+  <p class="desc">{{ product.description|truncatewords:15 }}</p>
+  <div class="actions">
+    <button class="add-to-cart" data-id="{{ product.id }}">Add to cart</button>
+  </div>
+</div>
